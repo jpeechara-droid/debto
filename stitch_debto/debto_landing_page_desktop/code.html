@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Debto - Reclaim Your Financial Future</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#1B2A4A",
+                        "cta-saffron": "#FF6B00",
+                        "secondary-blue": "#2E75B6",
+                        "background-light": "#F8F9FC",
+                        "background-dark": "#14171e",
+                    },
+                    fontFamily: {
+                        "display": ["Inter", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+</head>
+<body class="bg-background-light font-display text-slate-900 overflow-x-hidden">
+<!-- Sticky Top Nav -->
+<header class="sticky top-0 z-50 w-full bg-white/90 backdrop-blur-md border-b border-slate-200">
+<div class="max-w-[1440px] mx-auto px-6 lg:px-20 h-20 flex items-center justify-between">
+<div class="flex items-center gap-2">
+<div class="size-8 bg-primary rounded flex items-center justify-center">
+<span class="material-symbols-outlined text-cta-saffron">account_balance_wallet</span>
+</div>
+<h2 class="text-primary text-2xl font-bold tracking-tight">Debto</h2>
+</div>
+<nav class="hidden md:flex items-center gap-10">
+<a class="text-primary/80 hover:text-primary text-sm font-semibold transition-colors" href="#">Features</a>
+<a class="text-primary/80 hover:text-primary text-sm font-semibold transition-colors" href="#">How It Works</a>
+<a class="text-primary/80 hover:text-primary text-sm font-semibold transition-colors" href="#">FAQ</a>
+</nav>
+<div class="flex items-center gap-4">
+<button class="text-primary font-bold text-sm px-4 py-2 hover:bg-slate-100 rounded-lg transition-all">Login</button>
+<button class="bg-cta-saffron hover:bg-orange-600 text-white text-sm font-bold py-2.5 px-6 rounded-lg shadow-lg shadow-cta-saffron/20 transition-all">
+                    Check My Debt Free
+                </button>
+</div>
+</div>
+</header>
+<!-- Hero Section -->
+<section class="max-w-[1440px] mx-auto px-6 lg:px-20 py-16 lg:py-24 flex flex-col lg:flex-row items-center gap-12">
+<div class="w-full lg:w-[55%] flex flex-col gap-8">
+<div class="inline-flex items-center gap-2 bg-primary/5 text-primary px-3 py-1 rounded-full w-fit">
+<span class="material-symbols-outlined text-sm">verified_user</span>
+<span class="text-xs font-bold uppercase tracking-wider">RBI Compliant &amp; Bank-Grade Security</span>
+</div>
+<h1 class="text-primary text-[42px] font-extrabold leading-[1.1] tracking-tight">
+                Take Control of Your Debt and <br/> <span class="text-secondary-blue">Reclaim Your Financial Future</span>
+</h1>
+<p class="text-slate-600 text-lg max-w-xl leading-relaxed">
+                India's first AI-powered debt management platform. We analyze your loans from HDFC, SBI, ICICI and more to build a personalized path to freedom.
+            </p>
+<div class="flex flex-col sm:flex-row items-center gap-4">
+<button class="w-full sm:w-auto bg-cta-saffron hover:bg-orange-600 text-white text-lg font-bold py-4 px-10 rounded-lg shadow-xl shadow-cta-saffron/30 transition-all flex items-center justify-center gap-2">
+                    Get Free Debt Analysis <span class="material-symbols-outlined">arrow_forward</span>
+</button>
+<div class="flex items-center gap-3 px-4">
+<div class="flex -space-x-2">
+<div class="size-8 rounded-full border-2 border-white bg-slate-200"></div>
+<div class="size-8 rounded-full border-2 border-white bg-slate-300"></div>
+<div class="size-8 rounded-full border-2 border-white bg-slate-400"></div>
+</div>
+<span class="text-sm font-medium text-slate-500">Joined by 25k+ users</span>
+</div>
+</div>
+</div>
+<div class="w-full lg:w-[45%]">
+<div class="relative rounded-2xl overflow-hidden shadow-2xl bg-white border border-slate-100 p-2">
+<div class="bg-slate-50 rounded-xl aspect-[4/3] w-full flex items-center justify-center overflow-hidden" data-alt="Modern fintech dashboard showing debt reduction charts and financial metrics" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCC7DE6oAZP6FvtDn79qUT5uoVah4oOJkqCDlbRy2T0hG9QFY_d0NKRp3tQdpaMTN4JJT89XniQab9KtNZBsPbhHbFNDecdkIgvqOeYKgtD3yY2e5sSGwfIetFtA8Nq-nDbhDEAum4ABlP46nOtRw0QUjZph4bky5qEVNbzfpxcR12GPmAbXAzuvUNoKpsnRiJDugboSW4kCBFFNEfCUMjN3pmupW2IyaZpTdXWS3t6_iBnR_dQntES6EZ6gfeBjRCOmdFiEckLam0')">
+</div>
+</div>
+</div>
+</section>
+<!-- Social Proof -->
+<section class="bg-white border-y border-slate-100 py-10">
+<div class="max-w-[1440px] mx-auto px-6 lg:px-20 flex flex-col md:flex-row items-center justify-between gap-10">
+<div class="flex flex-col gap-1 items-center md:items-start">
+<div class="flex gap-1 text-cta-saffron">
+<span class="material-symbols-outlined fill-1">star</span>
+<span class="material-symbols-outlined fill-1">star</span>
+<span class="material-symbols-outlined fill-1">star</span>
+<span class="material-symbols-outlined fill-1">star</span>
+<span class="material-symbols-outlined fill-1">star</span>
+</div>
+<p class="text-primary font-bold">Trusted by 25,000+ Indians</p>
+</div>
+<div class="flex flex-wrap justify-center items-center gap-12 opacity-40 grayscale">
+<img alt="HDFC Bank Logo" class="h-6" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBY21-9FX_7nZlcnp4vC29Sraxj9OERkV_8f1tXnYKoEdusXvBh4B3haHO1Ip9A7U65xv7Kh9mIWS8zHSHuP-sOenHyU3Xia5vjTL5QnAzRfWsl6zZihwXki7bFsFjrx_hAUlZ6r1KH79ByTo9bl0qAsxGHtouxdrZFjofrvz125peXvJM0MSFoIzWD0kEmPZeU79_gzjK1f99gvevkOfp1xTBBe_eCb_pkBO5PrVqSnNmhecq9CQoZTQU32C6jvot_jirYanj9GoY"/>
+<img alt="SBI Logo" class="h-8" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBttu8c7OkKszC9R3poXspqehGUfiJn1k5jcF19fMPNDXrGczf0BzAbVJ4KsIzX7iJR-H5uQY-DLllsY-dvBAHk3WkqIO9Z1cQ_Y29PckVyL37b1WqJHxmu5XvMdV9prk47P3MCfVmFI7modNBRIhTCFHHdsGiKjJSxSXjXe95FMRemc5cGEGuWOaWCV866tHSRPiefQ_O4HwQsCBEfd7WF9gz-224O4JK37zpWB4SYeStTQT3yVfv7BO12xVIRrv8dE19LKCuR3aM"/>
+<img alt="ICICI Logo" class="h-6" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCwmyUJJzZskMJjTt25h62458eYemaw3bIpZ4I0B7P2qky0a-Tgr0yhxmMf4HjxjL8_mx0DmeL4rpAGLZtrAIOcahHFhFlDl7pU7taCQ-ClY2L8LjK9J_f9Htcb_feGm9oNs11U23CCPefAwctcWAigTnDueVJFTm7HEIT8AyDMhiEQlRi46ro26ng3L_CeiV87XR9nlhllyYCO3_E8eRruRgbnvaz8nNhS6-eux0ZHGL_Zd6jPCDRQkzK-edY3Q3QluOIPKuvdeOA"/>
+<img alt="Axis Bank Logo" class="h-6" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDhbt95SzRqc-69DQ1hONaeU_Uk4HpYsFXXS41KTQNjoyVVBQL2u6LPpPeiQT88_B3pTJGm_9lkg7tdu2Vc_wlmiPMM4Xo9wQ7cbfCzOTNS11nobZVMGshO9rQb0CFI26Aerkvx0L9js0l2pPklcIxEwFe5dSeA1AjAIZHe6MPPEQCCdO6tJknN9V8uKjC8ToOMx0KeheCM7gOXJ_5AzQPZYOZEwx4aFNiP0kTLmJkwYyPMN8WCdRGV-qDz8Scx06m2S79ULP9Qn-w"/>
+</div>
+</div>
+</section>
+<!-- How It Works -->
+<section class="max-w-[1440px] mx-auto px-6 lg:px-20 py-24">
+<div class="text-center mb-16">
+<h2 class="text-primary text-[28px] font-semibold mb-4">Your Path to Debt-Freedom</h2>
+<p class="text-slate-500">Three simple steps to start saving on your interest payments.</p>
+</div>
+<div class="grid md:grid-cols-3 gap-8 relative">
+<!-- Dotted Line Connector (Desktop) -->
+<div class="hidden md:block absolute top-12 left-[15%] right-[15%] h-[2px] border-t-2 border-dotted border-slate-200 -z-10"></div>
+<!-- Step 1 -->
+<div class="flex flex-col items-center text-center group">
+<div class="size-16 rounded-full bg-cta-saffron flex items-center justify-center text-white text-2xl font-bold mb-6 group-hover:scale-110 transition-transform">1</div>
+<h3 class="text-primary text-xl font-bold mb-2">Sign Up</h3>
+<p class="text-slate-500 leading-relaxed px-4">Create your secure account using your mobile number linked to your bank.</p>
+</div>
+<!-- Step 2 -->
+<div class="flex flex-col items-center text-center group">
+<div class="size-16 rounded-full bg-cta-saffron flex items-center justify-center text-white text-2xl font-bold mb-6 group-hover:scale-110 transition-transform">2</div>
+<h3 class="text-primary text-xl font-bold mb-2">Fetch CIBIL</h3>
+<p class="text-slate-500 leading-relaxed px-4">We securely fetch your credit report and active loan details in seconds.</p>
+</div>
+<!-- Step 3 -->
+<div class="flex flex-col items-center text-center group">
+<div class="size-16 rounded-full bg-cta-saffron flex items-center justify-center text-white text-2xl font-bold mb-6 group-hover:scale-110 transition-transform">3</div>
+<h3 class="text-primary text-xl font-bold mb-2">AI Analysis</h3>
+<p class="text-slate-500 leading-relaxed px-4">Receive a custom roadmap to pay off debt 40% faster with interest savings.</p>
+</div>
+</div>
+</section>
+<!-- Features Grid -->
+<section class="bg-primary py-24 text-white">
+<div class="max-w-[1440px] mx-auto px-6 lg:px-20">
+<div class="text-center mb-16">
+<h2 class="text-white text-[28px] font-semibold mb-4">Powerful Debt Tools</h2>
+<p class="text-slate-300">Everything you need to manage, track, and eliminate debt in one place.</p>
+</div>
+<div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+<!-- Card 1 -->
+<div class="bg-white/5 border border-white/10 p-8 rounded-xl hover:bg-white/10 transition-colors">
+<span class="material-symbols-outlined text-cta-saffron mb-4 text-3xl">timeline</span>
+<h3 class="text-xl font-bold mb-3">Debt Timeline</h3>
+<p class="text-slate-400 text-sm leading-relaxed">Visual chart showing exactly when you will be debt-free based on current payments.</p>
+</div>
+<!-- Card 2 -->
+<div class="bg-white/5 border border-white/10 p-8 rounded-xl hover:bg-white/10 transition-colors">
+<span class="material-symbols-outlined text-cta-saffron mb-4 text-3xl">psychology</span>
+<h3 class="text-xl font-bold mb-3">Smart Strategy</h3>
+<p class="text-slate-400 text-sm leading-relaxed">AI recommendations for Avalanche or Snowball methods tailored to your EMI flow.</p>
+</div>
+<!-- Card 3 -->
+<div class="bg-white/5 border border-white/10 p-8 rounded-xl hover:bg-white/10 transition-colors">
+<span class="material-symbols-outlined text-cta-saffron mb-4 text-3xl">calculate</span>
+<h3 class="text-xl font-bold mb-3">Savings Calculator</h3>
+<p class="text-slate-400 text-sm leading-relaxed">Calculate exactly how much ₹ you save by making small extra monthly payments.</p>
+</div>
+<!-- Card 4 -->
+<div class="bg-white/5 border border-white/10 p-8 rounded-xl hover:bg-white/10 transition-colors">
+<span class="material-symbols-outlined text-cta-saffron mb-4 text-3xl">swap_horiz</span>
+<h3 class="text-xl font-bold mb-3">Balance Transfer</h3>
+<p class="text-slate-400 text-sm leading-relaxed">Identify high-interest personal loans and credit cards for low-interest transfers.</p>
+</div>
+<!-- Card 5 -->
+<div class="bg-white/5 border border-white/10 p-8 rounded-xl hover:bg-white/10 transition-colors">
+<span class="material-symbols-outlined text-cta-saffron mb-4 text-3xl">speed</span>
+<h3 class="text-xl font-bold mb-3">Credit Score Monitor</h3>
+<p class="text-slate-400 text-sm leading-relaxed">Monthly credit score tracking with alerts on factors affecting your profile.</p>
+</div>
+<!-- Card 6 -->
+<div class="bg-white/5 border border-white/10 p-8 rounded-xl hover:bg-white/10 transition-colors">
+<span class="material-symbols-outlined text-cta-saffron mb-4 text-3xl">support_agent</span>
+<h3 class="text-xl font-bold mb-3">Expert Guidance</h3>
+<p class="text-slate-400 text-sm leading-relaxed">Direct access to debt counselors for complex cases and legal inquiries.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- AI Report Preview -->
+<section class="max-w-[1440px] mx-auto px-6 lg:px-20 py-24 flex flex-col lg:flex-row items-center gap-16">
+<div class="w-full lg:w-1/2 flex flex-col gap-6">
+<h2 class="text-primary text-[28px] font-semibold leading-tight">Detailed Analysis of Your Financial Health</h2>
+<p class="text-slate-600 leading-relaxed">Our AI analyzes over 50 data points from your credit history to generate a comprehensive 12-page report. Know your Debt-to-Income ratio, interest leakage, and potential savings in under 2 minutes.</p>
+<div class="flex flex-col gap-4 mb-4">
+<div class="flex items-start gap-3">
+<span class="material-symbols-outlined text-secondary-blue">check_circle</span>
+<p class="text-slate-700 font-medium">Interest Leakage Identification</p>
+</div>
+<div class="flex items-start gap-3">
+<span class="material-symbols-outlined text-secondary-blue">check_circle</span>
+<p class="text-slate-700 font-medium">Pre-payment Impact Analysis</p>
+</div>
+<div class="flex items-start gap-3">
+<span class="material-symbols-outlined text-secondary-blue">check_circle</span>
+<p class="text-slate-700 font-medium">Lender Negotiation Tips</p>
+</div>
+</div>
+<button class="w-fit bg-cta-saffron hover:bg-orange-600 text-white font-bold py-3.5 px-8 rounded-lg transition-all flex items-center gap-2">
+                See Your Report <span class="material-symbols-outlined">description</span>
+</button>
+</div>
+<div class="w-full lg:w-1/2">
+<div class="bg-white border border-slate-200 rounded-xl shadow-xl p-4">
+<div class="bg-slate-50 border border-slate-100 rounded-lg aspect-video flex flex-col p-6 gap-4" data-alt="UI mockup of a debt-free timeline chart showing a declining balance over time" style="background-image: linear-gradient(to bottom right, #f8fafc, #eff6ff)">
+<div class="h-4 w-32 bg-slate-200 rounded"></div>
+<div class="flex-1 flex items-end gap-2 px-4">
+<div class="flex-1 bg-secondary-blue/40 h-[90%] rounded-t-sm"></div>
+<div class="flex-1 bg-secondary-blue/50 h-[75%] rounded-t-sm"></div>
+<div class="flex-1 bg-secondary-blue/60 h-[60%] rounded-t-sm"></div>
+<div class="flex-1 bg-secondary-blue/70 h-[45%] rounded-t-sm"></div>
+<div class="flex-1 bg-cta-saffron h-[30%] rounded-t-sm"></div>
+<div class="flex-1 bg-cta-saffron h-[15%] rounded-t-sm"></div>
+</div>
+<div class="flex justify-between px-2">
+<span class="text-[10px] text-slate-400">2026</span>
+<span class="text-[10px] text-slate-400">2027</span>
+<span class="text-[10px] text-slate-400">2028</span>
+<span class="text-[10px] text-slate-400">2029</span>
+<span class="text-[10px] text-cta-saffron font-bold uppercase tracking-tighter">Debt Free!</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Testimonials -->
+<section class="bg-slate-50 py-24">
+<div class="max-w-[1440px] mx-auto px-6 lg:px-20">
+<h2 class="text-primary text-[28px] font-semibold text-center mb-16">Stories from Debt-Free Indians</h2>
+<div class="grid md:grid-cols-3 gap-8">
+<!-- User 1 -->
+<div class="bg-white p-8 rounded-xl shadow-sm border border-slate-100">
+<div class="flex gap-1 text-cta-saffron mb-4">
+<span class="material-symbols-outlined fill-1 text-sm">star</span>
+<span class="material-symbols-outlined fill-1 text-sm">star</span>
+<span class="material-symbols-outlined fill-1 text-sm">star</span>
+<span class="material-symbols-outlined fill-1 text-sm">star</span>
+<span class="material-symbols-outlined fill-1 text-sm">star</span>
+</div>
+<p class="text-slate-600 italic mb-6 leading-relaxed">"Debto helped me consolidate 3 credit cards into one low-interest loan. I'm saving ₹4,500 every month on interest alone!"</p>
+<div class="flex items-center gap-3">
+<div class="size-10 rounded-full bg-slate-200" data-alt="Profile photo of Rajesh K."></div>
+<div>
+<p class="text-primary font-bold text-sm">Rajesh K.</p>
+<p class="text-slate-400 text-xs">Bangalore, Karnataka</p>
+</div>
+</div>
+</div>
+<!-- User 2 -->
+<div class="bg-white p-8 rounded-xl shadow-sm border border-slate-100">
+<div class="flex gap-1 text-cta-saffron mb-4">
+<span class="material-symbols-outlined fill-1 text-sm">star</span>
+<span class="material-symbols-outlined fill-1 text-sm">star</span>
+<span class="material-symbols-outlined fill-1 text-sm">star</span>
+<span class="material-symbols-outlined fill-1 text-sm">star</span>
+<span class="material-symbols-outlined fill-1 text-sm">star</span>
+</div>
+<p class="text-slate-600 italic mb-6 leading-relaxed">"The AI analysis revealed exactly how much I was overpaying my private bank. Following the roadmap made everything simple."</p>
+<div class="flex items-center gap-3">
+<div class="size-10 rounded-full bg-slate-200" data-alt="Profile photo of Priyanka M."></div>
+<div>
+<p class="text-primary font-bold text-sm">Priyanka M.</p>
+<p class="text-slate-400 text-xs">Mumbai, Maharashtra</p>
+</div>
+</div>
+</div>
+<!-- User 3 -->
+<div class="bg-white p-8 rounded-xl shadow-sm border border-slate-100">
+<div class="flex gap-1 text-cta-saffron mb-4">
+<span class="material-symbols-outlined fill-1 text-sm">star</span>
+<span class="material-symbols-outlined fill-1 text-sm">star</span>
+<span class="material-symbols-outlined fill-1 text-sm">star</span>
+<span class="material-symbols-outlined fill-1 text-sm">star</span>
+<span class="material-symbols-outlined fill-1 text-sm">star</span>
+</div>
+<p class="text-slate-600 italic mb-6 leading-relaxed">"I finally have a clear date for when I will be debt-free. That peace of mind is worth everything. Highly recommend."</p>
+<div class="flex items-center gap-3">
+<div class="size-10 rounded-full bg-slate-200" data-alt="Profile photo of Amit S."></div>
+<div>
+<p class="text-primary font-bold text-sm">Amit S.</p>
+<p class="text-slate-400 text-xs">Gurugram, Haryana</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Consultation CTA -->
+<section class="max-w-[1440px] mx-auto px-6 lg:px-20 py-24">
+<div class="bg-primary rounded-2xl p-8 lg:p-16 flex flex-col lg:flex-row items-center justify-between gap-12 overflow-hidden relative">
+<div class="w-full lg:w-1/2 flex flex-col gap-6 relative z-10">
+<h2 class="text-white text-[32px] font-bold leading-tight">Need expert help navigating <br/> your debt?</h2>
+<p class="text-slate-300 text-lg">Schedule a free 15-minute consultation with our certified financial advisors. We help with EMI planning, settlement strategies, and credit repair.</p>
+<button class="w-fit bg-cta-saffron hover:bg-orange-600 text-white font-bold py-4 px-10 rounded-lg transition-all shadow-xl shadow-cta-saffron/20">
+                    Talk to an Advisor
+                </button>
+</div>
+<div class="w-full lg:w-2/5 flex justify-center lg:justify-end relative z-10">
+<div class="size-72 bg-white/10 rounded-full border border-white/20 flex items-center justify-center p-8">
+<span class="material-symbols-outlined text-[120px] text-white/50">support_agent</span>
+</div>
+</div>
+<!-- Decorative circle -->
+<div class="absolute -right-20 -bottom-20 size-80 bg-cta-saffron/10 rounded-full blur-3xl"></div>
+</div>
+</section>
+<!-- FAQ Accordion -->
+<section class="max-w-[800px] mx-auto px-6 py-24">
+<h2 class="text-primary text-[28px] font-semibold text-center mb-12">Frequently Asked Questions</h2>
+<div class="flex flex-col gap-4">
+<!-- FAQ 1 (Expanded) -->
+<div class="border border-slate-200 rounded-xl bg-white overflow-hidden">
+<button class="w-full px-6 py-5 text-left flex justify-between items-center group">
+<span class="font-bold text-primary">Is Debto safe and regulated?</span>
+<span class="material-symbols-outlined text-slate-400 group-hover:text-primary transition-colors">remove</span>
+</button>
+<div class="px-6 pb-5 text-slate-600 text-sm leading-relaxed">
+                    Yes, Debto is fully RBI compliant and uses bank-grade 256-bit encryption to protect your data. We never share your personal information with third-party lenders without your explicit consent.
+                </div>
+</div>
+<!-- FAQ 2 -->
+<div class="border border-slate-200 rounded-xl bg-white">
+<button class="w-full px-6 py-5 text-left flex justify-between items-center group">
+<span class="font-bold text-primary">Does checking my debt status affect my credit score?</span>
+<span class="material-symbols-outlined text-slate-400 group-hover:text-primary transition-colors">add</span>
+</button>
+</div>
+<!-- FAQ 3 -->
+<div class="border border-slate-200 rounded-xl bg-white">
+<button class="w-full px-6 py-5 text-left flex justify-between items-center group">
+<span class="font-bold text-primary">Which banks do you support?</span>
+<span class="material-symbols-outlined text-slate-400 group-hover:text-primary transition-colors">add</span>
+</button>
+</div>
+<!-- FAQ 4 -->
+<div class="border border-slate-200 rounded-xl bg-white">
+<button class="w-full px-6 py-5 text-left flex justify-between items-center group">
+<span class="font-bold text-primary">How long does the AI analysis take?</span>
+<span class="material-symbols-outlined text-slate-400 group-hover:text-primary transition-colors">add</span>
+</button>
+</div>
+<!-- FAQ 5 -->
+<div class="border border-slate-200 rounded-xl bg-white">
+<button class="w-full px-6 py-5 text-left flex justify-between items-center group">
+<span class="font-bold text-primary">Can you help if I am already in default?</span>
+<span class="material-symbols-outlined text-slate-400 group-hover:text-primary transition-colors">add</span>
+</button>
+</div>
+<!-- FAQ 6 -->
+<div class="border border-slate-200 rounded-xl bg-white">
+<button class="w-full px-6 py-5 text-left flex justify-between items-center group">
+<span class="font-bold text-primary">Is the basic debt report free?</span>
+<span class="material-symbols-outlined text-slate-400 group-hover:text-primary transition-colors">add</span>
+</button>
+</div>
+</div>
+</section>
+<!-- Footer -->
+<footer class="bg-primary text-white pt-20 pb-10">
+<div class="max-w-[1440px] mx-auto px-6 lg:px-20 grid md:grid-cols-2 lg:grid-cols-4 gap-12 mb-20">
+<div class="flex flex-col gap-6">
+<div class="flex items-center gap-2">
+<div class="size-8 bg-white/10 rounded flex items-center justify-center">
+<span class="material-symbols-outlined text-cta-saffron">account_balance_wallet</span>
+</div>
+<h2 class="text-white text-2xl font-bold tracking-tight">Debto</h2>
+</div>
+<p class="text-slate-400 text-sm leading-relaxed">Empowering millions of Indians to navigate debt intelligently and live a stress-free financial life.</p>
+<div class="flex gap-4">
+<div class="size-10 rounded-full bg-white/5 flex items-center justify-center hover:bg-white/10 transition-colors cursor-pointer">
+<span class="material-symbols-outlined text-xl">share</span>
+</div>
+<div class="size-10 rounded-full bg-white/5 flex items-center justify-center hover:bg-white/10 transition-colors cursor-pointer">
+<span class="material-symbols-outlined text-xl">person</span>
+</div>
+</div>
+</div>
+<div>
+<h4 class="font-bold mb-6">Product</h4>
+<ul class="flex flex-col gap-4 text-slate-400 text-sm">
+<li><a class="hover:text-white transition-colors" href="#">Debt Analysis</a></li>
+<li><a class="hover:text-white transition-colors" href="#">Credit Monitoring</a></li>
+<li><a class="hover:text-white transition-colors" href="#">Savings Calculator</a></li>
+<li><a class="hover:text-white transition-colors" href="#">Expert Help</a></li>
+</ul>
+</div>
+<div>
+<h4 class="font-bold mb-6">Company</h4>
+<ul class="flex flex-col gap-4 text-slate-400 text-sm">
+<li><a class="hover:text-white transition-colors" href="#">About Us</a></li>
+<li><a class="hover:text-white transition-colors" href="#">Careers</a></li>
+<li><a class="hover:text-white transition-colors" href="#">Privacy Policy</a></li>
+<li><a class="hover:text-white transition-colors" href="#">Terms of Service</a></li>
+</ul>
+</div>
+<div>
+<h4 class="font-bold mb-6">Support</h4>
+<ul class="flex flex-col gap-4 text-slate-400 text-sm">
+<li><a class="hover:text-white transition-colors" href="#">Help Center</a></li>
+<li><a class="hover:text-white transition-colors" href="#">Contact Support</a></li>
+<li><a class="hover:text-white transition-colors" href="#">RBI Fair Practices</a></li>
+<li><a class="hover:text-white transition-colors" href="#">Grievance Redressal</a></li>
+</ul>
+</div>
+</div>
+<div class="max-w-[1440px] mx-auto px-6 lg:px-20 pt-10 border-t border-white/10 flex flex-col md:flex-row items-center justify-between gap-6">
+<p class="text-slate-500 text-sm">© 2026 Debto Technologies Pvt Ltd. All rights reserved.</p>
+<div class="flex items-center gap-6">
+<div class="flex items-center gap-2 grayscale brightness-200 opacity-30">
+<img alt="RBI Badge" class="h-6" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDj4smYXGTCuaobRnqkjp5-Lk5XGUPNfdjmdfPHcq0soLDBgDl70G94Gx_DmrS-rdrFKKRBBsVnlbIz_EW2_b-Ia5NCoIRvUH4WIWsf4pPf990M0ar3dpkz-iDkf4VMIjyW3MTItyICHQ4mjfi2djj_2SNCEc3PNBJGrBiADvXVk0Eal1Ka-_P2etLcDODLl0PuDwS--A3nSjm2V5gPjWfKLPcyY1opPe36R4kAr5ku8agQOjdaagooZ47IH9Ug_Id3cgfn39Yrz9Y"/>
+<span class="text-[10px] font-bold uppercase tracking-widest">RBI Registered NBFC Partner</span>
+</div>
+</div>
+</div>
+</footer>
+</body></html>

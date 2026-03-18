@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#1b2a4b",
+                        "background-light": "#f6f7f8",
+                        "background-dark": "#14171e",
+                        "error": "#dc2626"
+                    },
+                    fontFamily: {
+                        "display": ["Inter"]
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<title>Debto - Login Error States</title>
+</head>
+<body class="bg-background-light dark:bg-background-dark font-display text-slate-900 dark:text-slate-100 min-h-screen">
+<div class="relative flex min-h-screen w-full flex-col overflow-x-hidden">
+<div class="layout-container flex h-full grow flex-col">
+<!-- Navigation -->
+<header class="flex items-center justify-between whitespace-nowrap border-b border-solid border-slate-200 dark:border-slate-800 px-10 py-4 bg-white dark:bg-slate-900">
+<div class="flex items-center gap-4 text-primary dark:text-slate-100">
+<div class="size-8 flex items-center justify-center bg-primary text-white rounded-lg">
+<span class="material-symbols-outlined text-xl">account_balance_wallet</span>
+</div>
+<h2 class="text-xl font-extrabold leading-tight tracking-tight">Debto</h2>
+</div>
+<button class="flex min-w-[84px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 px-4 bg-primary text-white text-sm font-bold leading-normal tracking-[0.015em] hover:bg-opacity-90 transition-colors">
+<span class="truncate">Help</span>
+</button>
+</header>
+<main class="flex-1 flex flex-col items-center py-12 px-4">
+<div class="w-full max-w-[960px] flex flex-col gap-12">
+<!-- Variant 1: Phone Input Error -->
+<section class="bg-white dark:bg-slate-900 p-8 rounded-xl shadow-sm border border-slate-200 dark:border-slate-800">
+<div class="flex flex-col gap-2 mb-8">
+<span class="text-xs font-bold uppercase tracking-widest text-primary/60 dark:text-slate-400">Variant 1</span>
+<h1 class="text-3xl font-black leading-tight tracking-tight">Welcome back</h1>
+<p class="text-slate-500 dark:text-slate-400 text-base">Login to manage your debts</p>
+</div>
+<div class="max-w-md">
+<label class="flex flex-col gap-2">
+<span class="text-sm font-semibold text-slate-700 dark:text-slate-300">Mobile Number</span>
+<div class="relative flex items-center">
+<div class="absolute left-4 flex items-center pointer-events-none text-slate-400">
+<span class="text-sm font-medium">+1</span>
+</div>
+<input class="form-input flex w-full min-w-0 flex-1 rounded-lg text-slate-900 dark:text-slate-100 bg-white dark:bg-slate-800 border-error focus:ring-error focus:border-error h-14 pl-12 pr-12 text-base font-normal leading-normal" placeholder="Enter phone number" type="tel" value="555-01"/>
+<div class="absolute right-4 text-error flex items-center justify-center">
+<span class="material-symbols-outlined">error</span>
+</div>
+</div>
+<p class="text-error text-sm font-medium mt-1">Please enter a valid 10-digit mobile number</p>
+</label>
+<button class="mt-6 w-full flex items-center justify-center rounded-lg h-14 px-6 bg-primary text-white text-base font-bold transition-all hover:bg-primary/90">
+                                Continue
+                            </button>
+</div>
+</section>
+<!-- Divider -->
+<div class="flex items-center gap-4">
+<div class="h-px bg-slate-200 dark:bg-slate-800 flex-1"></div>
+<span class="text-slate-400 text-xs font-bold uppercase tracking-widest">Verification Step</span>
+<div class="h-px bg-slate-200 dark:bg-slate-800 flex-1"></div>
+</div>
+<!-- Variant 2: OTP Error -->
+<section class="bg-white dark:bg-slate-900 p-8 rounded-xl shadow-sm border border-slate-200 dark:border-slate-800">
+<div class="flex flex-col gap-2 mb-8">
+<span class="text-xs font-bold uppercase tracking-widest text-primary/60 dark:text-slate-400">Variant 2</span>
+<h1 class="text-3xl font-black leading-tight tracking-tight">Enter Verification Code</h1>
+<p class="text-slate-500 dark:text-slate-400 text-base">We've sent a 4-digit code to +1 555-012-3456</p>
+</div>
+<div class="max-w-md">
+<div class="flex flex-col gap-4">
+<div class="flex gap-3">
+<input class="w-16 h-16 text-center text-2xl font-bold rounded-lg bg-white dark:bg-slate-800 border-error text-error focus:ring-error focus:border-error" maxlength="1" type="text" value="4"/>
+<input class="w-16 h-16 text-center text-2xl font-bold rounded-lg bg-white dark:bg-slate-800 border-error text-error focus:ring-error focus:border-error" maxlength="1" type="text" value="8"/>
+<input class="w-16 h-16 text-center text-2xl font-bold rounded-lg bg-white dark:bg-slate-800 border-error text-error focus:ring-error focus:border-error" maxlength="1" type="text" value="2"/>
+<input class="w-16 h-16 text-center text-2xl font-bold rounded-lg bg-white dark:bg-slate-800 border-error text-error focus:ring-error focus:border-error" maxlength="1" type="text" value="9"/>
+</div>
+<div class="flex items-center gap-2 text-error">
+<span class="material-symbols-outlined text-sm">warning</span>
+<p class="text-sm font-medium">Incorrect OTP. 2 attempts remaining.</p>
+</div>
+</div>
+<div class="mt-8 flex flex-col gap-4">
+<button class="w-full flex items-center justify-center rounded-lg h-14 px-6 bg-primary text-white text-base font-bold transition-all hover:bg-primary/90">
+                                    Verify Code
+                                </button>
+<button class="w-full flex items-center justify-center rounded-lg h-12 px-6 bg-primary/10 text-primary text-sm font-bold transition-all hover:bg-primary/20 dark:bg-primary/20 dark:text-white">
+                                    Resend Code
+                                </button>
+</div>
+<p class="mt-6 text-center text-slate-400 text-sm">
+                                Having trouble? <a class="text-primary dark:text-slate-200 underline font-semibold" href="#">Contact Support</a>
+</p>
+</div>
+</section>
+</div>
+</main>
+<!-- Footer -->
+<footer class="px-10 py-8 text-center text-slate-500 dark:text-slate-400 text-sm border-t border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900">
+<div class="flex justify-center gap-6 mb-4">
+<a class="hover:text-primary transition-colors" href="#">Privacy Policy</a>
+<a class="hover:text-primary transition-colors" href="#">Terms of Service</a>
+<a class="hover:text-primary transition-colors" href="#">Security</a>
+</div>
+<p>© 2024 Debto Inc. All rights reserved.</p>
+</footer>
+</div>
+</div>
+</body></html>

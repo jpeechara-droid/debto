@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Debto - Financial Calculators</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@300;400;500;600;700;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#ec5b13",
+                        "background-light": "#f8f6f6",
+                        "background-dark": "#221610",
+                    },
+                    fontFamily: {
+                        "display": ["Public Sans", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+</head>
+<body class="bg-background-light dark:bg-background-dark font-display text-slate-900 dark:text-slate-100 antialiased">
+<div class="flex h-screen overflow-hidden">
+<!-- Sidebar Navigation -->
+<aside class="w-64 flex-shrink-0 border-r border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 flex flex-col">
+<div class="p-6 flex items-center gap-3">
+<div class="w-10 h-10 rounded-xl bg-primary flex items-center justify-center text-white">
+<span class="material-symbols-outlined">account_balance_wallet</span>
+</div>
+<div>
+<h1 class="text-lg font-bold leading-none">Debto</h1>
+<p class="text-xs text-slate-500 dark:text-slate-400">Professional Fintech</p>
+</div>
+</div>
+<nav class="flex-1 px-4 py-4 space-y-2">
+<a class="flex items-center gap-3 px-3 py-2 text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800 rounded-lg transition-colors" href="#">
+<span class="material-symbols-outlined">dashboard</span>
+<span class="text-sm font-medium">Dashboard</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 bg-primary/10 text-primary rounded-lg transition-colors" href="#">
+<span class="material-symbols-outlined">calculate</span>
+<span class="text-sm font-medium">Calculators</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800 rounded-lg transition-colors" href="#">
+<span class="material-symbols-outlined">account_balance</span>
+<span class="text-sm font-medium">Accounts</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800 rounded-lg transition-colors" href="#">
+<span class="material-symbols-outlined">payments</span>
+<span class="text-sm font-medium">Payments</span>
+</a>
+<div class="pt-4 mt-4 border-t border-slate-100 dark:border-slate-800">
+<a class="flex items-center gap-3 px-3 py-2 text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800 rounded-lg transition-colors" href="#">
+<span class="material-symbols-outlined">settings</span>
+<span class="text-sm font-medium">Settings</span>
+</a>
+</div>
+</nav>
+<div class="p-4 m-4 rounded-xl bg-slate-50 dark:bg-slate-800/50">
+<p class="text-xs font-semibold text-slate-400 uppercase tracking-wider mb-2">Support</p>
+<button class="w-full py-2 px-3 text-sm text-slate-700 dark:text-slate-300 flex items-center gap-2 hover:bg-slate-100 dark:hover:bg-slate-800 rounded-lg transition-colors">
+<span class="material-symbols-outlined text-sm">help</span>
+                    Help Center
+                </button>
+</div>
+</aside>
+<!-- Main Content -->
+<main class="flex-1 overflow-y-auto">
+<header class="h-16 border-b border-slate-200 dark:border-slate-800 bg-white/80 dark:bg-slate-900/80 backdrop-blur-md flex items-center justify-between px-8 sticky top-0 z-10">
+<div class="flex items-center gap-4">
+<span class="text-slate-400">/</span>
+<span class="text-sm font-medium text-slate-600 dark:text-slate-300">Calculators Hub</span>
+</div>
+<div class="flex items-center gap-4">
+<button class="p-2 text-slate-500 hover:bg-slate-100 dark:hover:bg-slate-800 rounded-full transition-colors">
+<span class="material-symbols-outlined">notifications</span>
+</button>
+<div class="h-8 w-8 rounded-full bg-slate-200 dark:bg-slate-700 overflow-hidden" data-alt="User profile avatar icon placeholder" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBfOJ-u9Uy01UJ8lV4jUWEdaBNnR6NcBDjpiVGP1jbL1zJgK2sg1wKkCUVO2LRp2HYZ13uAnuVzP9E0bNThXbfsOgqBURM5CkYY0oK9rcOi9_vfLyOTihR3vNefVek4gninIUPKoFMCINecVUw7a0lsYYMmSegu6AvD6WkBxJKHkNCGUR9vqHd579-iI1Zja4aoRUan7z1iivWWGdQwX8P_LocKGwr4pwQR_E3omQ-KYmn-HKt6MmSC4ZnF_pR3DN36eRR7LrYnsy4')"></div>
+</div>
+</header>
+<div class="max-w-6xl mx-auto p-8 lg:p-12">
+<div class="mb-10">
+<h1 class="text-4xl font-black text-slate-900 dark:text-white leading-tight mb-2 tracking-tight">Financial Calculators</h1>
+<p class="text-lg text-slate-500 dark:text-slate-400">Explore scenarios and find your fastest path to debt freedom.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+<!-- Card 1: Extra Payment Calculator -->
+<div class="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-xl overflow-hidden shadow-sm flex flex-col">
+<div class="aspect-video bg-slate-100 dark:bg-slate-800 relative group overflow-hidden">
+<div class="absolute inset-0 bg-gradient-to-br from-amber-400/20 to-orange-500/20"></div>
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="Financial growth chart with upward trend" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA_s0ONYEVTjRwcoA7HnEIg4qSdkGWl-juG4UD1OJqNbvp_M8o0W3c6Bb9EpOWrOc6f1RrYWY4RreDxb-gFUGGRayHXYgALztYKMxdOylNwr6ISvvil050Tl_53a5Hg7OYgzjOLuOStpsXbKbBRB-DgD6epPI5F9Kp6mnZmJM6UrmDXS-RLdgLgbsciyjbn4A1mpwQf7ojssaYs_LK6MWNh-3iDDbp0ZJzHT3R6Xl4HfeY3kdqXbdrG6K507zN5ogE-VoPSmD9L8Y0"/>
+<div class="absolute top-4 left-4 h-12 w-12 rounded-xl bg-[#f59e0b] flex items-center justify-center text-white shadow-lg">
+<span class="material-symbols-outlined">add_card</span>
+</div>
+</div>
+<div class="p-6 flex flex-col flex-1">
+<h3 class="text-xl font-bold text-slate-900 dark:text-white mb-2">Extra Payment Calculator</h3>
+<p class="text-slate-500 dark:text-slate-400 text-sm leading-relaxed flex-1 mb-6">See how additional monthly payments reduce your interest and timeline.</p>
+<button class="w-full py-2.5 px-4 bg-[#f59e0b] hover:bg-[#d97706] text-white rounded-lg font-semibold text-sm transition-all flex items-center justify-center gap-2">
+                                Open Calculator
+                                <span class="material-symbols-outlined text-sm">arrow_forward</span>
+</button>
+</div>
+</div>
+<!-- Card 2: Balance Transfer Analyzer -->
+<div class="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-xl overflow-hidden shadow-sm flex flex-col">
+<div class="aspect-video bg-slate-100 dark:bg-slate-800 relative group overflow-hidden">
+<div class="absolute inset-0 bg-gradient-to-br from-teal-400/20 to-emerald-500/20"></div>
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="Analysis dashboard with comparison bars" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDiBD5RKTfyiXJtXO4B3_xZ4saDaii04F9W_JAjDndFhJI87NtFgRRpNEVOPXF17drNyY-IDUzG0BnLYwmKktW6pd4PBOkPEbHe-nxBWo13cSDjlJ4C0x-VEtKJFDy6qcJRuRhfUKrKmln183t7DTmFJTJe2w9N5G8Pg3vgJqOlzBZe0eM_9qUptLuiTxkIimcBSKURy5KbvPDbQp5ugTmsGMpmv8jyOGONzb6BYYK1kmqmSZX9eZre-X2fFPObICIW3aWMAJAiuFk"/>
+<div class="absolute top-4 left-4 h-12 w-12 rounded-xl bg-[#14b8a6] flex items-center justify-center text-white shadow-lg">
+<span class="material-symbols-outlined">swap_horiz</span>
+</div>
+</div>
+<div class="p-6 flex flex-col flex-1">
+<h3 class="text-xl font-bold text-slate-900 dark:text-white mb-2">Balance Transfer Analyzer</h3>
+<p class="text-slate-500 dark:text-slate-400 text-sm leading-relaxed flex-1 mb-6">Compare potential savings when moving high-interest debt to new cards.</p>
+<button class="w-full py-2.5 px-4 border-2 border-slate-200 dark:border-slate-700 text-slate-700 dark:text-slate-300 hover:bg-slate-50 dark:hover:bg-slate-800 rounded-lg font-semibold text-sm transition-all flex items-center justify-center gap-2">
+                                Open Analyzer
+                                <span class="material-symbols-outlined text-sm">open_in_new</span>
+</button>
+</div>
+</div>
+<!-- Card 3: Loan Consolidation Planner -->
+<div class="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-xl overflow-hidden shadow-sm flex flex-col">
+<div class="aspect-video bg-slate-100 dark:bg-slate-800 relative group overflow-hidden">
+<div class="absolute inset-0 bg-gradient-to-br from-violet-400/20 to-indigo-500/20"></div>
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="Stacked geometric blocks representing consolidation" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCjWaOQl7H0kEiQU9YEEW1S_IHb1wdid9RucYg0kPZ01Bx08rU8su3F7TA0D_26uyC-QVZnI3OLJCpeXvveTgK5mySOV1Ky43q3HHRmJrgyJUbtDn0XvAVr0UjstS8u-tHqIgX9s7DwO00vCeg-yjHRIkOTr7FFzSGkt9OmA8SrFAG6a3qudtRspYN9fvmb795F6NHJS3hJJvE97HHcfOYXxAPe5q36IpleVrVGnfgN5JtC7LIGi3sRcUnlFGS8h4ig4XMsMtUCjis"/>
+<div class="absolute top-4 left-4 h-12 w-12 rounded-xl bg-[#8b5cf6] flex items-center justify-center text-white shadow-lg">
+<span class="material-symbols-outlined">account_tree</span>
+</div>
+</div>
+<div class="p-6 flex flex-col flex-1">
+<h3 class="text-xl font-bold text-slate-900 dark:text-white mb-2">Loan Consolidation Planner</h3>
+<p class="text-slate-500 dark:text-slate-400 text-sm leading-relaxed flex-1 mb-6">Evaluate the impact of combining multiple loans into a single payment.</p>
+<button class="w-full py-2.5 px-4 border-2 border-slate-200 dark:border-slate-700 text-slate-700 dark:text-slate-300 hover:bg-slate-50 dark:hover:bg-slate-800 rounded-lg font-semibold text-sm transition-all flex items-center justify-center gap-2">
+                                Start Planning
+                                <span class="material-symbols-outlined text-sm">open_in_new</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Secondary Section -->
+<div class="mt-16 bg-primary/5 rounded-2xl p-8 border border-primary/10 flex flex-col md:flex-row items-center gap-8">
+<div class="flex-1">
+<h2 class="text-2xl font-bold text-slate-900 dark:text-white mb-3">Need personalized advice?</h2>
+<p class="text-slate-600 dark:text-slate-400 mb-6 max-w-lg">Our financial advisors are ready to help you craft a custom strategy based on your unique debt profile and financial goals.</p>
+<button class="bg-primary hover:bg-primary/90 text-white px-6 py-3 rounded-xl font-bold transition-all shadow-md">
+                            Schedule a Free Consultation
+                        </button>
+</div>
+<div class="w-full md:w-64 aspect-square bg-slate-200 dark:bg-slate-800 rounded-2xl overflow-hidden" data-alt="Friendly professional financial advisor smiling" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDcZtk1exIj87JYCM5mEu08VCYb1sZ3__c2UDqZwuGhf3AuSyzQ51kzbWbN6pbd6a54jhIVQHidI_ySRcuxgCS74KFrNLqqGvvXIi1Dtq7o9f6uO41RaEZ2BhZS36TqCjdXneO8NmElPXp6ib4PbUX8m_zoFhJzoSt2uNH3BV7T2czZ-MajudzdYHTr-ziOSNRM80t1nWGhqeNt1gT_Tupu5hNzesno1Uxnjm8SrdSG1OurFuiKbwZBMX2-Xq_v7VvtSeyNOyH3uZ0')"></div>
+</div>
+</div>
+</main>
+</div>
+</body></html>

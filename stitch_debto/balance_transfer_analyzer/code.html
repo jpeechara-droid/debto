@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Debto - Balance Transfer Analyzer</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#1b2a4b",
+                        "accent-orange": "#f59e0b",
+                        "background-light": "#F8F9FC",
+                        "background-dark": "#14171e",
+                        "border-gray": "#E2E8F0",
+                    },
+                    fontFamily: {
+                        "display": ["Inter", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.75rem", // 12px
+                        "xl": "1rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+<style>
+        body { font-family: 'Inter', sans-serif; }
+        .custom-slider::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            appearance: none;
+            width: 18px;
+            height: 18px;
+            background: #1b2a4b;
+            cursor: pointer;
+            border-radius: 50%;
+        }
+    </style>
+</head>
+<body class="bg-background-light text-slate-900 font-display">
+<div class="flex min-h-screen">
+<!-- Sidebar (240px) -->
+<aside class="w-[240px] bg-white border-r border-border-gray flex flex-col fixed h-full">
+<div class="p-6">
+<div class="flex items-center gap-2 mb-8">
+<div class="w-8 h-8 bg-primary rounded flex items-center justify-center">
+<span class="material-symbols-outlined text-white text-xl">account_balance_wallet</span>
+</div>
+<h1 class="text-primary text-xl font-bold tracking-tight">Debto</h1>
+</div>
+<nav class="space-y-1">
+<a class="flex items-center gap-3 px-3 py-2.5 text-slate-600 hover:bg-slate-50 rounded-lg transition-colors" href="#">
+<span class="material-symbols-outlined text-[22px]">grid_view</span>
+<span class="text-sm font-medium">Dashboard</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 bg-primary text-white rounded-lg shadow-sm transition-colors" href="#">
+<span class="material-symbols-outlined text-[22px]">calculate</span>
+<span class="text-sm font-medium">Calculators</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 text-slate-600 hover:bg-slate-50 rounded-lg transition-colors" href="#">
+<span class="material-symbols-outlined text-[22px]">payments</span>
+<span class="text-sm font-medium">Loans</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 text-slate-600 hover:bg-slate-50 rounded-lg transition-colors" href="#">
+<span class="material-symbols-outlined text-[22px]">account_balance</span>
+<span class="text-sm font-medium">Banks</span>
+</a>
+<div class="pt-4 mt-4 border-t border-border-gray">
+<a class="flex items-center gap-3 px-3 py-2.5 text-slate-600 hover:bg-slate-50 rounded-lg transition-colors" href="#">
+<span class="material-symbols-outlined text-[22px]">settings</span>
+<span class="text-sm font-medium">Settings</span>
+</a>
+</div>
+</nav>
+</div>
+<div class="mt-auto p-4">
+<div class="bg-slate-50 p-4 rounded-lg border border-border-gray">
+<p class="text-xs font-semibold text-slate-400 uppercase tracking-wider mb-2">Pro Account</p>
+<p class="text-xs text-slate-600 mb-3">Get unlimited bank comparisons</p>
+<button class="w-full py-2 text-xs font-bold text-primary border border-primary rounded-lg hover:bg-primary hover:text-white transition-all">Upgrade Now</button>
+</div>
+</div>
+</aside>
+<!-- Main Content (1440px - 240px) -->
+<main class="ml-[240px] flex-1 flex">
+<!-- Left Panel (40%) -->
+<section class="w-[40%] p-8 overflow-y-auto border-r border-border-gray bg-white">
+<header class="mb-8">
+<h2 class="text-primary text-2xl font-extrabold tracking-tight mb-2">Balance Transfer Analyzer</h2>
+<p class="text-slate-500 text-sm">Compare and optimize your existing debt burden.</p>
+</header>
+<div class="space-y-6">
+<!-- Loan Selector -->
+<div>
+<label class="block text-xs font-bold text-slate-500 uppercase tracking-wider mb-2">Current Loan</label>
+<div class="relative">
+<select class="w-full bg-slate-50 border border-border-gray rounded-lg px-4 py-3 appearance-none focus:ring-2 focus:ring-primary/20 outline-none text-sm font-medium">
+<option>Bajaj Finance — Personal Loan</option>
+<option>HDFC — Home Loan</option>
+<option>SBI — Car Loan</option>
+</select>
+<span class="material-symbols-outlined absolute right-3 top-1/2 -translate-y-1/2 text-slate-400 pointer-events-none">expand_more</span>
+</div>
+</div>
+<!-- Current Terms Card -->
+<div class="bg-white border border-border-gray rounded-lg p-5 shadow-sm">
+<div class="flex justify-between items-start mb-4">
+<div>
+<h3 class="text-sm font-bold text-slate-900">Current Terms</h3>
+<p class="text-xs text-slate-500">Loan ID: #BJ-88921</p>
+</div>
+<span class="bg-blue-50 text-blue-600 text-[10px] font-bold px-2 py-1 rounded uppercase tracking-wide">In Progress</span>
+</div>
+<div class="grid grid-cols-2 gap-y-4 gap-x-2">
+<div>
+<p class="text-[10px] text-slate-400 font-bold uppercase">Outstanding</p>
+<p class="text-lg font-bold text-slate-900">₹3,20,000</p>
+</div>
+<div>
+<p class="text-[10px] text-slate-400 font-bold uppercase">Interest Rate</p>
+<p class="text-lg font-bold text-slate-900">14.5% <span class="text-xs font-normal text-slate-400">p.a.</span></p>
+</div>
+<div>
+<p class="text-[10px] text-slate-400 font-bold uppercase">Current EMI</p>
+<p class="text-sm font-semibold text-slate-700">₹12,500</p>
+</div>
+<div>
+<p class="text-[10px] text-slate-400 font-bold uppercase">Months Left</p>
+<p class="text-sm font-semibold text-slate-700">28 Months</p>
+</div>
+</div>
+<div class="mt-4 pt-4 border-t border-slate-100 flex justify-between items-center">
+<p class="text-xs text-slate-500 font-medium">Total Payable Interest</p>
+<p class="text-sm font-bold text-red-500">₹1,12,000</p>
+</div>
+</div>
+<!-- Target Bank Section -->
+<div class="space-y-4 pt-4 border-t border-border-gray">
+<h3 class="text-sm font-bold text-primary">Target Bank Options</h3>
+<div>
+<label class="block text-xs font-bold text-slate-500 uppercase tracking-wider mb-2">Transfer to</label>
+<div class="relative">
+<select class="w-full border-2 border-primary/20 rounded-lg px-4 py-3 appearance-none focus:ring-2 focus:ring-primary/20 outline-none text-sm font-bold text-primary bg-primary/5">
+<option>Axis Bank (11.5%)</option>
+<option>SBI (10.75%)</option>
+<option>ICICI (12.0%)</option>
+</select>
+<span class="material-symbols-outlined absolute right-3 top-1/2 -translate-y-1/2 text-primary pointer-events-none">expand_more</span>
+</div>
+</div>
+<div class="flex gap-2 overflow-x-auto pb-2">
+<div class="flex-shrink-0 border border-border-gray rounded-lg px-4 py-2 bg-slate-50 flex items-center gap-2 cursor-pointer hover:border-primary/40 transition-all">
+<div class="w-6 h-6 rounded-full bg-blue-600 flex items-center justify-center text-[10px] text-white font-bold">SBI</div>
+<span class="text-xs font-bold">10.75%</span>
+</div>
+<div class="flex-shrink-0 border border-border-gray rounded-lg px-4 py-2 bg-slate-50 flex items-center gap-2 cursor-pointer hover:border-primary/40 transition-all">
+<div class="w-6 h-6 rounded-full bg-orange-600 flex items-center justify-center text-[10px] text-white font-bold">ICICI</div>
+<span class="text-xs font-bold">12.0%</span>
+</div>
+</div>
+<!-- Inputs -->
+<div class="grid grid-cols-2 gap-4">
+<div>
+<label class="block text-[10px] font-bold text-slate-500 uppercase tracking-wider mb-2">Processing Fee</label>
+<div class="relative">
+<span class="absolute left-3 top-1/2 -translate-y-1/2 text-sm font-medium text-slate-400">₹</span>
+<input class="w-full border border-border-gray rounded-lg pl-7 pr-3 py-2.5 text-sm font-medium outline-none focus:border-primary" type="text" value="5,000"/>
+</div>
+</div>
+<div>
+<label class="block text-[10px] font-bold text-slate-500 uppercase tracking-wider mb-2">Foreclosure Charges</label>
+<div class="relative">
+<span class="absolute left-3 top-1/2 -translate-y-1/2 text-sm font-medium text-slate-400">₹</span>
+<input class="w-full border border-border-gray rounded-lg pl-7 pr-3 py-2.5 text-sm font-medium outline-none focus:border-primary" type="text" value="3,000"/>
+</div>
+</div>
+</div>
+<div>
+<div class="flex justify-between items-center mb-2">
+<label class="text-[10px] font-bold text-slate-500 uppercase tracking-wider">New Tenure (Months)</label>
+<span class="text-sm font-bold text-primary">28 Months</span>
+</div>
+<input class="w-full h-2 bg-slate-200 rounded-lg appearance-none cursor-pointer custom-slider" max="60" min="12" type="range" value="28"/>
+<div class="flex justify-between mt-1">
+<span class="text-[10px] font-medium text-slate-400">12m</span>
+<span class="text-[10px] font-medium text-slate-400">60m</span>
+</div>
+</div>
+</div>
+<button class="w-full bg-accent-orange hover:bg-orange-600 text-white font-bold py-4 rounded-lg shadow-lg shadow-orange-200 transition-all flex items-center justify-center gap-2 mt-4 uppercase tracking-widest text-xs">
+                        Compare Transfer Options
+                        <span class="material-symbols-outlined text-lg">trending_flat</span>
+</button>
+</div>
+</section>
+<!-- Right Panel (60%) -->
+<section class="w-[60%] p-8 overflow-y-auto bg-background-light">
+<!-- Top Comparison Cards -->
+<div class="grid grid-cols-11 gap-4 items-center mb-8">
+<div class="col-span-5 bg-white border border-border-gray rounded-lg p-6 shadow-sm">
+<div class="flex items-center gap-2 mb-4">
+<div class="w-8 h-8 rounded-full bg-blue-700 flex items-center justify-center text-[10px] font-bold text-white">BJF</div>
+<p class="text-xs font-bold text-slate-500">Bajaj Finance</p>
+</div>
+<div class="space-y-3">
+<div class="flex justify-between">
+<span class="text-xs text-slate-400">Int. Rate</span>
+<span class="text-xs font-bold">14.5%</span>
+</div>
+<div class="flex justify-between">
+<span class="text-xs text-slate-400">EMI</span>
+<span class="text-sm font-extrabold">₹12,500</span>
+</div>
+<div class="flex justify-between">
+<span class="text-xs text-slate-400">Total Interest</span>
+<span class="text-xs font-bold text-red-400">₹1,12,000</span>
+</div>
+<div class="pt-2 border-t border-slate-50 flex justify-between">
+<span class="text-xs font-bold text-slate-500">Total Outflow</span>
+<span class="text-sm font-black text-slate-900">₹3,50,000</span>
+</div>
+</div>
+</div>
+<div class="col-span-1 flex flex-col items-center justify-center">
+<div class="bg-green-500 w-10 h-10 rounded-full flex items-center justify-center text-white shadow-lg">
+<span class="material-symbols-outlined font-bold">arrow_forward</span>
+</div>
+<div class="mt-4 text-center">
+<p class="text-[10px] font-bold text-green-600 uppercase">Saving</p>
+<p class="text-xs font-black text-green-600">₹28,400</p>
+</div>
+</div>
+<div class="col-span-5 bg-white border-2 border-primary rounded-lg p-6 shadow-xl relative">
+<span class="absolute -top-3 left-1/2 -translate-x-1/2 bg-primary text-white text-[10px] font-black px-3 py-1 rounded-full uppercase tracking-widest">Recommended</span>
+<div class="flex items-center gap-2 mb-4">
+<div class="w-8 h-8 rounded-full bg-red-600 flex items-center justify-center text-[10px] font-bold text-white">AXIS</div>
+<p class="text-xs font-bold text-slate-500">Axis Bank</p>
+</div>
+<div class="space-y-3">
+<div class="flex justify-between">
+<span class="text-xs text-slate-400">Int. Rate</span>
+<span class="text-xs font-bold text-primary">11.5%</span>
+</div>
+<div class="flex justify-between">
+<span class="text-xs text-slate-400">EMI</span>
+<span class="text-sm font-extrabold text-primary">₹11,200</span>
+</div>
+<div class="flex justify-between">
+<span class="text-xs text-slate-400">Total Interest</span>
+<span class="text-xs font-bold text-green-500">₹80,000</span>
+</div>
+<div class="pt-2 border-t border-slate-100 flex justify-between">
+<span class="text-xs font-bold text-slate-500">Total Outflow</span>
+<span class="text-sm font-black text-primary">₹3,13,600</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Break-even Analysis -->
+<div class="bg-white border border-border-gray rounded-lg p-6 mb-6 shadow-sm">
+<div class="flex justify-between items-center mb-6">
+<h4 class="text-sm font-bold text-slate-900 flex items-center gap-2">
+<span class="material-symbols-outlined text-primary">speed</span>
+                            Break-even Analysis
+                        </h4>
+<span class="text-sm font-bold text-green-600 bg-green-50 px-3 py-1 rounded-lg">Break-even in 4 months</span>
+</div>
+<div class="h-32 w-full flex items-end gap-1 mb-2">
+<!-- Abstract Gradient Pattern for Cumulative Savings Chart -->
+<div class="flex-1 bg-red-400 rounded-t h-[30%]" title="Initial Fees Outflow"></div>
+<div class="flex-1 bg-red-300 rounded-t h-[20%]"></div>
+<div class="flex-1 bg-slate-200 rounded-t h-[10%]"></div>
+<div class="flex-1 bg-green-200 rounded-t h-[20%]"></div>
+<div class="flex-1 bg-green-300 rounded-t h-[40%]"></div>
+<div class="flex-1 bg-green-400 rounded-t h-[60%]"></div>
+<div class="flex-1 bg-green-500 rounded-t h-[80%]"></div>
+<div class="flex-1 bg-green-600 rounded-t h-[100%]"></div>
+</div>
+<div class="flex justify-between text-[10px] text-slate-400 font-bold uppercase tracking-wider">
+<span>Month 1</span>
+<span>Break-even</span>
+<span>Month 28</span>
+</div>
+</div>
+<!-- Monthly EMI Comparison Chart (Visual Mockup) -->
+<div class="grid grid-cols-2 gap-6 mb-8">
+<div class="bg-white border border-border-gray rounded-lg p-5 shadow-sm">
+<p class="text-[10px] font-bold text-slate-400 uppercase tracking-wider mb-4">Monthly EMI Delta</p>
+<div class="flex items-end gap-6 h-24 px-4">
+<div class="flex-1 flex flex-col items-center">
+<div class="w-12 bg-slate-200 rounded-t h-full"></div>
+<span class="text-[10px] font-medium text-slate-500 mt-2">Old</span>
+</div>
+<div class="flex-1 flex flex-col items-center">
+<div class="w-12 bg-primary rounded-t h-[80%]"></div>
+<span class="text-[10px] font-medium text-slate-500 mt-2">New</span>
+</div>
+</div>
+<div class="mt-4 pt-4 border-t border-slate-50 text-center">
+<p class="text-xs font-bold text-slate-700">₹1,300 Monthly Savings</p>
+</div>
+</div>
+<div class="bg-amber-50 border border-amber-200 rounded-lg p-5 flex gap-3">
+<span class="material-symbols-outlined text-amber-500">warning</span>
+<div>
+<p class="text-xs font-bold text-amber-800 mb-1">Fee Impact Warning</p>
+<p class="text-[11px] text-amber-700 leading-relaxed">Processing fees (₹5,000) and foreclosure charges (₹3,000) will be added to your first month's payment. Ensure liquidity for ₹8,000 upfront.</p>
+</div>
+</div>
+</div>
+<!-- Action CTAs -->
+<div class="space-y-4">
+<button class="w-full bg-accent-orange hover:bg-orange-600 text-white font-bold py-4 rounded-lg shadow-lg shadow-orange-100 transition-all flex items-center justify-center gap-2 uppercase tracking-widest text-sm">
+                        Book Consultation to Execute This Transfer
+                    </button>
+<div class="flex gap-4">
+<button class="flex-1 border border-primary text-primary hover:bg-primary/5 font-bold py-3 rounded-lg text-sm transition-all">
+                            Compare Another Bank
+                        </button>
+<button class="flex-1 text-slate-400 hover:text-slate-600 font-bold py-3 rounded-lg text-sm transition-all underline underline-offset-4">
+                            Try Another Loan
+                        </button>
+</div>
+</div>
+</section>
+</main>
+</div>
+<!-- Background Images placeholders used as patterns -->
+<div class="hidden">
+<img data-alt="Abstract financial bar chart representing monthly growth" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA9m4qY7szOB_RzLEGdRlpN2mDwgwMXt--JJpZVvXwS7YIljsLItre3m2Oa5vzONCZAJBe1UhZywg06iKPhkgZeJzwY0-tbUz4iyoICh8i706jexL-NqXM7cSkxRvu9PDk54aQvGWEqTd1NRDRlvskdYTOWhKSJ2yXvSU52PwJOqJc4C11SYdOY2unA9UEkKTs7gPVZevjxM7KhrKxxSJPuOQtckVV6sIY_3t5DYKlCeloKqTYWHPZOZ4vVIJMsp7taxDtH9yx-atQ"/>
+<img data-alt="Cumulative savings curve from loss to profit" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAv7s7m3dxyIXBhUD4ATFWtMsYgNiw1m1CcZLL7npgGjJ7b0agwsPT_AVmz-dr7hgkVi6RydQJOqG4t60HT3GrzLGyoC-o8yJMn3lgFI7uvFAYcQyOm9bPRYmnxh-aWBukO0QypI8VUHmbIu1mK3Bx4xQyTDk5N5o513SXT9kqc-50t2YboM4Kdesy-5ILP6G5kmSBDsyHYbA4RojxsEiE4MZvGZ1lp0cuduUfHWjBQpXzhVhaOARswjvH-YXrfs9UY6Zyt_PQUFi0"/>
+</div>
+</body></html>

@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>CIBIL Report Fetch Error</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#1b2a4b",
+                        "saffron": "#FF9933",
+                        "error-red": "#DC2626",
+                        "background-light": "#F8F9FC",
+                        "background-dark": "#14171e",
+                    },
+                    fontFamily: {
+                        "display": ["Inter", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "2xl": "1rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+<style>
+        .progress-ring-circle {
+            transition: stroke-dashoffset 0.35s;
+            transform: rotate(-90deg);
+            transform-origin: 50% 50%;
+        }
+    </style>
+</head>
+<body class="bg-background-light font-display antialiased min-h-screen flex items-center justify-center p-6">
+<div class="w-full max-w-[480px] bg-white rounded-2xl shadow-2xl p-12 flex flex-col items-center">
+<!-- Progress Ring Section -->
+<div class="relative flex items-center justify-center mb-10">
+<svg class="w-[120px] h-[120px]">
+<circle class="text-slate-100" cx="60" cy="60" fill="transparent" r="52" stroke="currentColor" stroke-width="8"></circle>
+<circle class="text-saffron progress-ring-circle" cx="60" cy="60" fill="transparent" r="52" stroke="currentColor" stroke-dasharray="326.7" stroke-dashoffset="163.35" stroke-linecap="round" stroke-width="8"></circle>
+</svg>
+<span class="absolute text-4xl font-bold text-error-red">3</span>
+</div>
+<h2 class="text-xl font-bold text-slate-900 mb-8 w-full text-center">Fetching Report Status</h2>
+<!-- Step List -->
+<div class="w-full space-y-6 mb-8">
+<!-- Step 1 -->
+<div class="flex items-center justify-between">
+<div class="flex flex-col">
+<span class="text-sm font-medium text-slate-900">Step 1: Verifying PAN Card...</span>
+<span class="text-xs text-slate-500">Completed</span>
+</div>
+<span class="material-symbols-outlined text-green-600">check_circle</span>
+</div>
+<!-- Step 2 -->
+<div class="flex items-center justify-between">
+<div class="flex flex-col">
+<span class="text-sm font-medium text-slate-900">Step 2: Verifying Aadhaar...</span>
+<span class="text-xs text-slate-500">Completed</span>
+</div>
+<span class="material-symbols-outlined text-green-600">check_circle</span>
+</div>
+<!-- Step 3 (Error) -->
+<div class="flex items-center justify-between">
+<div class="flex flex-col">
+<span class="text-sm font-bold text-error-red">Step 3: Fetching CIBIL Credit Report...</span>
+<span class="text-xs text-error-red/80">Failed to connect</span>
+</div>
+<span class="material-symbols-outlined text-error-red">cancel</span>
+</div>
+<!-- Step 4 -->
+<div class="flex items-center justify-between opacity-50">
+<div class="flex flex-col">
+<span class="text-sm font-medium text-slate-900">Step 4: Generating AI Analysis...</span>
+<span class="text-xs text-slate-500">Pending</span>
+</div>
+<span class="material-symbols-outlined text-slate-400">schedule</span>
+</div>
+</div>
+<!-- Alert Card -->
+<div class="w-full bg-red-50 border border-red-100 rounded-xl p-4 flex gap-3 mb-8">
+<span class="material-symbols-outlined text-error-red shrink-0">warning</span>
+<p class="text-sm text-red-800 leading-relaxed">
+                We couldn't fetch your report. This may be due to incorrect details or a temporary service issue.
+            </p>
+</div>
+<!-- Actions -->
+<div class="w-full flex flex-col items-center gap-4 mb-10">
+<button class="w-full bg-saffron hover:bg-orange-500 text-white font-bold py-4 rounded-xl transition-colors shadow-lg shadow-saffron/20">
+                Try Again
+            </button>
+<a class="text-primary font-semibold text-sm hover:underline decoration-2 underline-offset-4" href="#">
+                Contact Support
+            </a>
+</div>
+<!-- Did You Know Card -->
+<div class="w-full bg-[#EBF5FF] rounded-lg p-4 flex gap-3">
+<span class="material-symbols-outlined text-blue-600 text-xl shrink-0">lightbulb</span>
+<div class="flex flex-col gap-1">
+<span class="text-[13px] font-bold text-primary uppercase tracking-wider">Did you know?</span>
+<p class="text-[13px] text-primary leading-snug">
+                    Paying even ₹2,000 extra per month on your highest-interest loan can save you lakhs in interest.
+                </p>
+</div>
+</div>
+</div>
+</body></html>

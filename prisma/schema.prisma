@@ -1,0 +1,166 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider  = "postgresql"
+  url       = env("DATABASE_URL")
+  directUrl = env("DIRECT_URL")
+}
+
+model User {
+  id            String    @id @default(uuid()) @db.Uuid
+  phone         String    @unique @db.VarChar(15)
+  email         String?   @db.VarChar(255)
+  fullName      String?   @map("full_name") @db.VarChar(255)
+  googleId      String?   @map("google_id") @db.VarChar(255)
+  city          String?   @db.VarChar(100)
+  monthlyIncome Decimal?  @map("monthly_income") @db.Decimal(12, 2)
+  avatarUrl     String?   @map("avatar_url")
+  createdAt     DateTime  @default(now()) @map("created_at") @db.Timestamptz
+  updatedAt     DateTime  @default(now()) @updatedAt @map("updated_at") @db.Timestamptz
+
+  kycRecord          KycRecord?
+  consentRecords     ConsentRecord[]
+  creditReports      CreditReport[]
+  loanAccounts       LoanAccount[]
+  aiAnalysisReports  AiAnalysisReport[]
+  consultationBookings ConsultationBooking[]
+
+  @@map("users")
+}
+
+model KycRecord {
+  id              String   @id @default(uuid()) @db.Uuid
+  userId          String   @unique @map("user_id") @db.Uuid
+  panNumber       String   @map("pan_number")
+  panName         String?  @map("pan_name") @db.VarChar(255)
+  aadhaarHash     String   @map("aadhaar_hash")
+  dateOfBirth     DateTime @map("date_of_birth") @db.Date
+  panVerified     Boolean  @default(false) @map("pan_verified")
+  aadhaarVerified Boolean  @default(false) @map("aadhaar_verified")
+  verificationTxnId String? @map("verification_txn_id") @db.VarChar(255)
+  createdAt       DateTime @default(now()) @map("created_at") @db.Timestamptz
+
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@map("kyc_records")
+}
+
+model ConsentRecord {
+  id             String   @id @default(uuid()) @db.Uuid
+  userId         String   @map("user_id") @db.Uuid
+  consentType    String   @map("consent_type") @db.VarChar(50)
+  consentGiven   Boolean  @map("consent_given")
+  consentText    String   @map("consent_text")
+  consentVersion String   @map("consent_version") @db.VarChar(10)
+  ipAddress      String?  @map("ip_address")
+  sessionId      String?  @map("session_id") @db.VarChar(255)
+  userAgent      String?  @map("user_agent")
+  createdAt      DateTime @default(now()) @map("created_at") @db.Timestamptz
+
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@map("consent_records")
+}
+
+model CreditReport {
+  id              String   @id @default(uuid()) @db.Uuid
+  userId          String   @map("user_id") @db.Uuid
+  decentroTxnId   String?  @map("decentro_txn_id") @db.VarChar(255)
+  creditScore     Int?     @map("credit_score")
+  rawReport       Json     @map("raw_report")
+  parsedSummary   Json?    @map("parsed_summary")
+  pdfBase64       String?  @map("pdf_base64")
+  fetchedAt       DateTime @default(now()) @map("fetched_at") @db.Timestamptz
+  expiresAt       DateTime @map("expires_at") @db.Timestamptz
+
+  user             User              @relation(fields: [userId], references: [id], onDelete: Cascade)
+  loanAccounts     LoanAccount[]
+  aiAnalysisReports AiAnalysisReport[]
+
+  @@map("credit_reports")
+}
+
+model LoanAccount {
+  id                 String   @id @default(uuid()) @db.Uuid
+  creditReportId     String   @map("credit_report_id") @db.Uuid
+  userId             String   @map("user_id") @db.Uuid
+  accountNumber      String?  @map("account_number") @db.VarChar(50)
+  institution        String?  @db.VarChar(255)
+  loanType           String?  @map("loan_type") @db.VarChar(50)
+  sanctionedAmount   Decimal? @map("sanctioned_amount") @db.Decimal(14, 2)
+  outstandingBalance Decimal? @map("outstanding_balance") @db.Decimal(14, 2)
+  emiAmount          Decimal? @map("emi_amount") @db.Decimal(12, 2)
+  interestRate       Decimal? @map("interest_rate") @db.Decimal(5, 2)
+  tenureMonths       Int?     @map("tenure_months")
+  tenureRemaining    Int?     @map("tenure_remaining")
+  disbursementDate   DateTime? @map("disbursement_date") @db.Date
+  daysPastDue        Int      @default(0) @map("days_past_due")
+  accountStatus      String?  @map("account_status") @db.VarChar(20)
+  creditLimit        Decimal? @map("credit_limit") @db.Decimal(14, 2)
+  currentBalance     Decimal? @map("current_balance") @db.Decimal(14, 2)
+  utilizationPct     Decimal? @map("utilization_pct") @db.Decimal(5, 2)
+  paymentHistory     Json?    @map("payment_history")
+  createdAt          DateTime @default(now()) @map("created_at") @db.Timestamptz
+
+  creditReport CreditReport @relation(fields: [creditReportId], references: [id], onDelete: Cascade)
+  user         User         @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@map("loan_accounts")
+}
+
+model AiAnalysisReport {
+  id                  String   @id @default(uuid()) @db.Uuid
+  userId              String   @map("user_id") @db.Uuid
+  creditReportId      String?  @map("credit_report_id") @db.Uuid
+  debtSnapshot        Json?    @map("debt_snapshot")
+  debtFreeTimeline    Json?    @map("debt_free_timeline")
+  repaymentStrategies Json?    @map("repayment_strategies")
+  extraPaymentImpact  Json?    @map("extra_payment_impact")
+  refinancingAnalysis Json?    @map("refinancing_analysis")
+  creditHealth        Json?    @map("credit_health")
+  narrativeText       String?  @map("narrative_text")
+  generatedAt         DateTime @default(now()) @map("generated_at") @db.Timestamptz
+
+  user         User          @relation(fields: [userId], references: [id], onDelete: Cascade)
+  creditReport CreditReport? @relation(fields: [creditReportId], references: [id])
+
+  @@map("ai_analysis_reports")
+}
+
+model ConsultationBooking {
+  id           String   @id @default(uuid()) @db.Uuid
+  userId       String   @map("user_id") @db.Uuid
+  advisorId    String?  @map("advisor_id") @db.Uuid
+  serviceType  String?  @map("service_type") @db.VarChar(50)
+  bookingDate  DateTime @map("booking_date") @db.Date
+  bookingTime  DateTime @map("booking_time") @db.Time()
+  mode         String?  @db.VarChar(20)
+  status       String   @default("pending") @db.VarChar(20)
+  paymentId    String?  @map("payment_id") @db.VarChar(255)
+  amount       Decimal? @db.Decimal(10, 2)
+  notes        String?
+  createdAt    DateTime @default(now()) @map("created_at") @db.Timestamptz
+
+  user    User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  advisor Advisor? @relation(fields: [advisorId], references: [id])
+
+  @@map("consultation_bookings")
+}
+
+model Advisor {
+  id              String   @id @default(uuid()) @db.Uuid
+  name            String   @db.VarChar(255)
+  title           String?  @db.VarChar(255)
+  avatarUrl       String?  @map("avatar_url")
+  rating          Decimal? @db.Decimal(3, 2)
+  totalReviews    Int      @default(0) @map("total_reviews")
+  specializations String[]
+  availableSlots  Json?    @map("available_slots")
+  isActive        Boolean  @default(true) @map("is_active")
+
+  consultationBookings ConsultationBooking[]
+
+  @@map("advisors")
+}

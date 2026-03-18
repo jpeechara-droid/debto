@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#1b2a4b",
+                        "accent": "#FF6B00",
+                        "background-light": "#f8f9fc",
+                        "background-dark": "#14171e",
+                        "border-gray": "#E5E7EB",
+                    },
+                    fontFamily: {
+                        "display": ["Inter", "sans-serif"]
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<title>Debto - Settings</title>
+</head>
+<body class="bg-background-light font-display text-slate-900">
+<div class="flex min-h-screen">
+<!-- Sidebar: 240px Navy -->
+<aside class="w-[240px] bg-primary flex flex-col fixed h-full shrink-0">
+<div class="p-6 flex items-center gap-3">
+<div class="bg-accent rounded-lg p-1 flex items-center justify-center">
+<span class="material-symbols-outlined text-white text-2xl">account_balance_wallet</span>
+</div>
+<h1 class="text-white text-xl font-bold tracking-tight">Debto</h1>
+</div>
+<nav class="flex-1 px-4 py-4 flex flex-col gap-1">
+<a class="flex items-center gap-3 px-3 py-2 text-slate-300 hover:text-white hover:bg-white/10 rounded-lg transition-colors" href="#">
+<span class="material-symbols-outlined">dashboard</span>
+<span class="text-sm font-medium">Dashboard</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 text-slate-300 hover:text-white hover:bg-white/10 rounded-lg transition-colors" href="#">
+<span class="material-symbols-outlined">payments</span>
+<span class="text-sm font-medium">Payments</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 text-slate-300 hover:text-white hover:bg-white/10 rounded-lg transition-colors" href="#">
+<span class="material-symbols-outlined">account_balance</span>
+<span class="text-sm font-medium">Loans</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 text-white bg-white/10 rounded-lg" href="#">
+<span class="material-symbols-outlined">settings</span>
+<span class="text-sm font-medium">Settings</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 text-slate-300 hover:text-white hover:bg-white/10 rounded-lg transition-colors" href="#">
+<span class="material-symbols-outlined">contact_support</span>
+<span class="text-sm font-medium">Support</span>
+</a>
+</nav>
+<div class="p-4 border-t border-white/10">
+<div class="flex items-center gap-3 px-2 py-3">
+<div class="size-10 rounded-full bg-slate-500 overflow-hidden border border-white/20">
+<img class="w-full h-full object-cover" data-alt="Professional headshot of Rajesh Kumar" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA3wMNV4iswD5MGDblF6ysy2f5ZOg_2KSzYuBMmravSbElOVrJxHoW5-Bfg6ymhTDyKv5uGAHviPMt2xeta3ExnvQOziEJLRkWOR2YxxBt7wG-Qk9OzTPd2PHagERFBbmAIHudrj_FY1EHzNEAv8XFvK4o37KTh5kRQWOxdpveDIqqtbyTVk5dcovpsbQkWRmKnT35gMJK0wa0JEtB_35Dzhsd-HlfmEBUVcH4rHGNNTwZc7BpDrp5wJlwuSQ7SSI8ZaC_Nt30l1gA"/>
+</div>
+<div class="flex flex-col">
+<span class="text-white text-xs font-semibold">Rajesh Kumar</span>
+<span class="text-slate-400 text-[10px]">Premium Member</span>
+</div>
+</div>
+</div>
+</aside>
+<!-- Main Content -->
+<main class="flex-1 ml-[240px] p-10">
+<div class="max-w-4xl mx-auto">
+<header class="mb-8">
+<h1 class="text-3xl font-extrabold text-primary mb-2">Settings</h1>
+<p class="text-slate-500">Manage your account preferences and security settings.</p>
+</header>
+<!-- Tabs Navigation -->
+<div class="border-b border-border-gray mb-8 flex gap-8">
+<button class="pb-4 text-sm font-bold text-primary border-b-2 border-accent">Profile</button>
+<button class="pb-4 text-sm font-medium text-slate-500 hover:text-primary transition-colors border-b-2 border-transparent">Security</button>
+<button class="pb-4 text-sm font-medium text-slate-500 hover:text-primary transition-colors border-b-2 border-transparent">Notifications</button>
+<button class="pb-4 text-sm font-medium text-slate-500 hover:text-primary transition-colors border-b-2 border-transparent">Data &amp; Privacy</button>
+</div>
+<!-- Profile Content Card -->
+<div class="bg-white border border-border-gray rounded-xl p-8 shadow-sm">
+<!-- Profile Photo Section -->
+<div class="flex items-center gap-6 mb-10">
+<div class="relative group cursor-pointer">
+<div class="size-20 rounded-full overflow-hidden border-2 border-border-gray">
+<img class="w-full h-full object-cover" data-alt="Rajesh Kumar profile picture" src="https://lh3.googleusercontent.com/aida-public/AB6AXuADByQ-WafnxgaZDZjayBvQIe1e2sLY07O3owm3W2KlgXbMfrQEoh3E6nddjwWe5wzHEmIKoJuGt5lRI4SouBG3b_hl0xVxNoIjttjymEa9p2TSCgIL_rNYB5nZDbpPfXFSmjC1bPgeQXw2-lz0W2ZBZoHYxykMziPLrvVtNT90vn6t_u_ikmnfJe-O-np4mhNP9lbztNRSRxh4Gwo2FEIWItbXtf29lUmuanNNlUZpgUtuu92bjuzBTSqVYra21m9t02x9xPz6M0s"/>
+</div>
+<div class="absolute inset-0 bg-black/40 rounded-full flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
+<span class="material-symbols-outlined text-white text-xl">photo_camera</span>
+</div>
+</div>
+<div>
+<button class="text-accent text-sm font-bold hover:underline mb-1 block">Change Photo</button>
+<p class="text-xs text-slate-400">JPG, GIF or PNG. Max size of 800K</p>
+</div>
+</div>
+<!-- 2-Column Form -->
+<div class="grid grid-cols-2 gap-x-8 gap-y-6">
+<!-- Name -->
+<div class="flex flex-col gap-2">
+<label class="text-sm font-semibold text-primary">Full Name</label>
+<input class="w-full px-4 py-3 rounded-lg border border-border-gray focus:ring-2 focus:ring-primary/20 focus:border-primary outline-none transition-all text-sm" type="text" value="Rajesh Kumar"/>
+</div>
+<!-- Email -->
+<div class="flex flex-col gap-2">
+<label class="text-sm font-semibold text-primary">Email Address</label>
+<input class="w-full px-4 py-3 rounded-lg border border-border-gray focus:ring-2 focus:ring-primary/20 focus:border-primary outline-none transition-all text-sm" type="email" value="rajesh.kumar@gmail.com"/>
+</div>
+<!-- Phone (Non-editable) -->
+<div class="flex flex-col gap-2">
+<label class="text-sm font-semibold text-primary">Phone Number</label>
+<div class="relative">
+<input class="w-full px-4 py-3 pr-24 rounded-lg border border-border-gray bg-slate-50 text-slate-500 text-sm cursor-not-allowed" readonly="" type="text" value="+91 98765 43210"/>
+<div class="absolute right-3 top-1/2 -translate-y-1/2 flex items-center gap-1.5">
+<span class="flex items-center gap-1 px-2 py-0.5 bg-green-100 text-green-700 text-[10px] font-bold rounded uppercase tracking-wider">
+<span class="material-symbols-outlined text-[12px]">check_circle</span> Verified
+                                </span>
+<span class="material-symbols-outlined text-slate-400 text-sm">lock</span>
+</div>
+</div>
+</div>
+<!-- City Dropdown -->
+<div class="flex flex-col gap-2">
+<label class="text-sm font-semibold text-primary">City</label>
+<div class="relative">
+<select class="w-full px-4 py-3 rounded-lg border border-border-gray focus:ring-2 focus:ring-primary/20 focus:border-primary outline-none transition-all text-sm appearance-none bg-white">
+<option selected="" value="mumbai">Mumbai</option>
+<option value="delhi">Delhi</option>
+<option value="bangalore">Bangalore</option>
+<option value="chennai">Chennai</option>
+</select>
+<span class="material-symbols-outlined absolute right-3 top-1/2 -translate-y-1/2 text-slate-400 pointer-events-none">expand_more</span>
+</div>
+</div>
+<!-- Monthly Income -->
+<div class="flex flex-col gap-2">
+<div class="flex items-center gap-1.5">
+<label class="text-sm font-semibold text-primary">Monthly Income</label>
+<span class="material-symbols-outlined text-slate-400 text-[16px] cursor-help" title="Used for credit limit assessment">info</span>
+</div>
+<div class="relative">
+<span class="absolute left-4 top-1/2 -translate-y-1/2 text-slate-400 font-medium">₹</span>
+<input class="w-full pl-8 pr-4 py-3 rounded-lg border border-border-gray focus:ring-2 focus:ring-primary/20 focus:border-primary outline-none transition-all text-sm" placeholder="50,000" type="text"/>
+</div>
+</div>
+</div>
+<!-- Form Actions -->
+<div class="mt-12 flex items-center justify-end gap-4 border-t border-border-gray pt-8">
+<button class="px-6 py-2.5 text-sm font-bold text-slate-500 hover:text-primary transition-colors rounded-lg">
+                        Cancel
+                    </button>
+<button class="px-8 py-2.5 bg-primary text-white text-sm font-bold rounded-lg hover:bg-primary/90 transition-colors shadow-sm">
+                        Save Changes
+                    </button>
+</div>
+</div>
+<!-- Footer Small Hint -->
+<p class="mt-6 text-center text-xs text-slate-400">
+                Last updated: 12 Oct 2023, 10:45 AM
+            </p>
+</div>
+</main>
+</div>
+</body></html>

@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#1b2a4b",
+                        "accent": "#f59e0b", /* Saffron */
+                        "background-light": "#f6f7f8",
+                        "background-dark": "#14171e",
+                    },
+                    fontFamily: {
+                        "display": ["Inter"]
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<title>CIBIL Credit Report - Rajesh Kumar</title>
+</head>
+<body class="bg-background-light dark:bg-background-dark font-display text-slate-900 dark:text-slate-100 min-h-screen">
+<div class="flex">
+<!-- Sidebar (240px) -->
+<aside class="w-[240px] fixed h-screen bg-white border-r border-slate-200 flex flex-col justify-between p-6">
+<div class="flex flex-col gap-8">
+<div class="flex flex-col">
+<h2 class="text-primary text-lg font-bold">Rajesh Kumar</h2>
+<p class="text-slate-500 text-xs font-medium">Customer ID: 8821</p>
+</div>
+<nav class="flex flex-col gap-2">
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg text-slate-600 hover:bg-slate-50 transition-colors" href="#">
+<span class="material-symbols-outlined">dashboard</span>
+<span class="text-sm font-medium">Dashboard</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg bg-primary/5 text-primary border-r-4 border-accent" href="#">
+<span class="material-symbols-outlined fill-1">description</span>
+<span class="text-sm font-semibold">My Credit Report</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg text-slate-600 hover:bg-slate-50 transition-colors" href="#">
+<span class="material-symbols-outlined">local_offer</span>
+<span class="text-sm font-medium">Loan Offers</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg text-slate-600 hover:bg-slate-50 transition-colors" href="#">
+<span class="material-symbols-outlined">settings</span>
+<span class="text-sm font-medium">Settings</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg text-slate-600 hover:bg-slate-50 transition-colors" href="#">
+<span class="material-symbols-outlined">support_agent</span>
+<span class="text-sm font-medium">Support</span>
+</a>
+</nav>
+</div>
+<button class="bg-primary text-white w-full py-2.5 rounded-lg text-sm font-bold shadow-md hover:bg-primary/90">
+                Upgrade to Pro
+            </button>
+</aside>
+<!-- Main Content -->
+<main class="ml-[240px] flex-1 p-8">
+<!-- Header -->
+<header class="flex justify-between items-start mb-8">
+<div>
+<h1 class="text-primary text-3xl font-black tracking-tight">Your CIBIL Credit Report</h1>
+<p class="text-slate-500 text-sm mt-1">Report as of March 12, 2026</p>
+</div>
+<div class="flex gap-3">
+<button class="flex items-center gap-2 px-4 py-2 border border-slate-200 rounded-lg text-sm font-bold text-primary hover:bg-white shadow-sm transition-all">
+<span class="material-symbols-outlined text-[20px]">download</span>
+                        Download PDF
+                    </button>
+<button class="flex items-center gap-2 px-4 py-2 border border-slate-200 rounded-lg text-sm font-bold text-primary hover:bg-white shadow-sm transition-all">
+<span class="material-symbols-outlined text-[20px]">share</span>
+                        Share
+                    </button>
+</div>
+</header>
+<!-- Hero Score Card -->
+<section class="bg-white rounded-xl shadow-sm border border-slate-100 p-8 mb-8 flex gap-12">
+<!-- Circular Gauge -->
+<div class="flex flex-col items-center justify-center w-[200px] border-r border-slate-100 pr-12">
+<div class="relative w-[140px] h-[140px] flex items-center justify-center">
+<svg class="w-full h-full -rotate-90" viewbox="0 0 100 100">
+<circle class="text-slate-100" cx="50" cy="50" fill="transparent" r="40" stroke="currentColor" stroke-width="8"></circle>
+<circle class="text-emerald-500" cx="50" cy="50" fill="transparent" r="40" stroke="currentColor" stroke-dasharray="251.2" stroke-dashoffset="65" stroke-linecap="round" stroke-width="8"></circle>
+</svg>
+<div class="absolute inset-0 flex flex-col items-center justify-center">
+<span class="text-3xl font-black text-primary">742</span>
+<span class="text-[10px] font-bold text-emerald-600 uppercase tracking-wider">Good Zone</span>
+</div>
+</div>
+<p class="text-slate-400 text-xs mt-4 text-center">+12 points from last month</p>
+</div>
+<!-- Score Factors -->
+<div class="flex-1">
+<h3 class="text-primary font-bold text-lg mb-6">Score Factors</h3>
+<div class="grid grid-cols-1 gap-4">
+<div class="space-y-1">
+<div class="flex justify-between text-xs font-semibold">
+<span class="text-slate-600">Payment History</span>
+<span class="text-emerald-600">Excellent (85%)</span>
+</div>
+<div class="h-2 bg-slate-100 rounded-full overflow-hidden">
+<div class="h-full bg-emerald-500 w-[85%]"></div>
+</div>
+</div>
+<div class="space-y-1">
+<div class="flex justify-between text-xs font-semibold">
+<span class="text-slate-600">Credit Utilization</span>
+<span class="text-amber-500">Moderate (60%)</span>
+</div>
+<div class="h-2 bg-slate-100 rounded-full overflow-hidden">
+<div class="h-full bg-amber-500 w-[60%]"></div>
+</div>
+</div>
+<div class="space-y-1">
+<div class="flex justify-between text-xs font-semibold">
+<span class="text-slate-600">Credit Age</span>
+<span class="text-emerald-600">Good (80%)</span>
+</div>
+<div class="h-2 bg-slate-100 rounded-full overflow-hidden">
+<div class="h-full bg-emerald-500 w-[80%]"></div>
+</div>
+</div>
+<div class="space-y-1">
+<div class="flex justify-between text-xs font-semibold">
+<span class="text-slate-600">Credit Mix</span>
+<span class="text-emerald-600">Balanced (75%)</span>
+</div>
+<div class="h-2 bg-slate-100 rounded-full overflow-hidden">
+<div class="h-full bg-emerald-500 w-[75%]"></div>
+</div>
+</div>
+<div class="space-y-1">
+<div class="flex justify-between text-xs font-semibold">
+<span class="text-slate-600">Hard Inquiries</span>
+<span class="text-emerald-600">Very Low (90%)</span>
+</div>
+<div class="h-2 bg-slate-100 rounded-full overflow-hidden">
+<div class="h-full bg-emerald-500 w-[90%]"></div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Tab Bar -->
+<nav class="flex border-b border-slate-200 mb-6 overflow-x-auto no-scrollbar">
+<button class="px-4 py-3 text-sm font-bold text-primary border-b-2 border-accent whitespace-nowrap">All Accounts (8)</button>
+<button class="px-4 py-3 text-sm font-medium text-slate-500 hover:text-primary whitespace-nowrap">Active Loans (4)</button>
+<button class="px-4 py-3 text-sm font-medium text-slate-500 hover:text-primary whitespace-nowrap">Credit Cards (1)</button>
+<button class="px-4 py-3 text-sm font-medium text-slate-500 hover:text-primary whitespace-nowrap">Closed (3)</button>
+<button class="px-4 py-3 text-sm font-medium text-slate-500 hover:text-primary whitespace-nowrap">Overdue (0)</button>
+<button class="px-4 py-3 text-sm font-medium text-slate-500 hover:text-primary whitespace-nowrap">Inquiries (2)</button>
+</nav>
+<!-- Account Cards -->
+<div class="flex flex-col gap-6">
+<!-- Card 1: Home Loan -->
+<div class="bg-white rounded-xl border border-slate-100 shadow-sm overflow-hidden">
+<div class="p-6">
+<div class="flex justify-between items-start mb-4">
+<div>
+<h4 class="text-lg font-bold text-primary">HDFC Bank Home Loan</h4>
+<p class="text-xs text-slate-500 font-medium">A/C: XXXX4921 | Opened: Jan 20, 2019</p>
+</div>
+<span class="bg-emerald-50 text-emerald-600 text-[10px] font-black px-2 py-1 rounded uppercase tracking-wide">Active</span>
+</div>
+<div class="grid grid-cols-4 gap-4 py-4 border-y border-slate-50">
+<div>
+<p class="text-[10px] text-slate-400 uppercase font-bold mb-1">Outstanding</p>
+<p class="text-base font-black text-primary">₹25,45,000</p>
+</div>
+<div>
+<p class="text-[10px] text-slate-400 uppercase font-bold mb-1">Monthly EMI</p>
+<p class="text-base font-black text-primary">₹28,500</p>
+</div>
+<div>
+<p class="text-[10px] text-slate-400 uppercase font-bold mb-1">Interest Rate</p>
+<p class="text-base font-black text-primary">8.5% p.a.</p>
+</div>
+<div>
+<p class="text-[10px] text-slate-400 uppercase font-bold mb-1">Sanctioned Amount</p>
+<p class="text-base font-black text-primary">₹35,00,000</p>
+</div>
+</div>
+<div class="mt-6">
+<p class="text-[10px] text-slate-400 uppercase font-bold mb-3">24-Month Payment Timeline</p>
+<div class="flex gap-1.5 overflow-x-auto no-scrollbar">
+<!-- Generating 24 small green rectangles -->
+<div class="w-6 h-4 bg-emerald-500 rounded-sm" title="Paid"></div>
+<div class="w-6 h-4 bg-emerald-500 rounded-sm" title="Paid"></div>
+<div class="w-6 h-4 bg-emerald-500 rounded-sm" title="Paid"></div>
+<div class="w-6 h-4 bg-emerald-500 rounded-sm" title="Paid"></div>
+<div class="w-6 h-4 bg-emerald-500 rounded-sm" title="Paid"></div>
+<div class="w-6 h-4 bg-emerald-500 rounded-sm" title="Paid"></div>
+<div class="w-6 h-4 bg-emerald-500 rounded-sm" title="Paid"></div>
+<div class="w-6 h-4 bg-emerald-500 rounded-sm" title="Paid"></div>
+<div class="w-6 h-4 bg-emerald-500 rounded-sm" title="Paid"></div>
+<div class="w-6 h-4 bg-emerald-500 rounded-sm" title="Paid"></div>
+<div class="w-6 h-4 bg-emerald-500 rounded-sm" title="Paid"></div>
+<div class="w-6 h-4 bg-emerald-500 rounded-sm" title="Paid"></div>
+<div class="w-6 h-4 bg-emerald-500 rounded-sm" title="Paid"></div>
+<div class="w-6 h-4 bg-emerald-500 rounded-sm" title="Paid"></div>
+<div class="w-6 h-4 bg-emerald-500 rounded-sm" title="Paid"></div>
+<div class="w-6 h-4 bg-emerald-500 rounded-sm" title="Paid"></div>
+<div class="w-6 h-4 bg-emerald-500 rounded-sm" title="Paid"></div>
+<div class="w-6 h-4 bg-emerald-500 rounded-sm" title="Paid"></div>
+<div class="w-6 h-4 bg-emerald-500 rounded-sm" title="Paid"></div>
+<div class="w-6 h-4 bg-emerald-500 rounded-sm" title="Paid"></div>
+<div class="w-6 h-4 bg-emerald-500 rounded-sm" title="Paid"></div>
+<div class="w-6 h-4 bg-emerald-500 rounded-sm" title="Paid"></div>
+<div class="w-6 h-4 bg-emerald-500 rounded-sm" title="Paid"></div>
+<div class="w-6 h-4 bg-emerald-500 rounded-sm" title="Paid"></div>
+</div>
+</div>
+</div>
+</div>
+<!-- Card 2: Overdue Account -->
+<div class="bg-white rounded-xl border-t-4 border-t-rose-500 border-x border-b border-slate-100 shadow-sm overflow-hidden">
+<div class="p-6">
+<div class="flex justify-between items-start mb-4">
+<div>
+<h4 class="text-lg font-bold text-primary">SBI Personal Loan</h4>
+<p class="text-xs text-slate-500 font-medium">A/C: XXXX1102 | Opened: Aug 12, 2024</p>
+</div>
+<span class="bg-rose-50 text-rose-600 text-[10px] font-black px-2 py-1 rounded uppercase tracking-wide">OVERDUE</span>
+</div>
+<div class="flex items-center gap-3 bg-rose-50 p-3 rounded-lg border border-rose-100 mb-4">
+<span class="material-symbols-outlined text-rose-600">warning</span>
+<p class="text-sm font-bold text-rose-700">32 days past due — ₹8,500 overdue</p>
+</div>
+<div class="grid grid-cols-4 gap-4 py-4 border-y border-slate-50">
+<div>
+<p class="text-[10px] text-slate-400 uppercase font-bold mb-1">Outstanding</p>
+<p class="text-base font-black text-primary">₹1,12,000</p>
+</div>
+<div>
+<p class="text-[10px] text-slate-400 uppercase font-bold mb-1">Next EMI</p>
+<p class="text-base font-black text-rose-600">₹8,500</p>
+</div>
+<div>
+<p class="text-[10px] text-slate-400 uppercase font-bold mb-1">Overdue Amount</p>
+<p class="text-base font-black text-rose-600">₹8,500</p>
+</div>
+<div>
+<p class="text-[10px] text-slate-400 uppercase font-bold mb-1">Days Past Due</p>
+<p class="text-base font-black text-rose-600">32 Days</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Card 3: Credit Card -->
+<div class="bg-white rounded-xl border border-slate-100 shadow-sm overflow-hidden">
+<div class="p-6">
+<div class="flex justify-between items-start mb-4">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 bg-slate-50 rounded flex items-center justify-center border border-slate-100">
+<span class="material-symbols-outlined text-primary">credit_card</span>
+</div>
+<div>
+<h4 class="text-lg font-bold text-primary">ICICI Bank Amazon Pay Credit Card</h4>
+<p class="text-xs text-slate-500 font-medium">A/C: XXXX8842 | Opened: Mar 05, 2021</p>
+</div>
+</div>
+<span class="bg-emerald-50 text-emerald-600 text-[10px] font-black px-2 py-1 rounded uppercase tracking-wide">Active</span>
+</div>
+<div class="space-y-4 mb-6">
+<div class="space-y-1">
+<div class="flex justify-between text-xs font-bold">
+<span class="text-slate-600">Credit Utilization (60%)</span>
+<span class="text-primary">Limit: ₹2,50,000</span>
+</div>
+<div class="h-2 bg-slate-100 rounded-full overflow-hidden">
+<div class="h-full bg-amber-500 w-[60%]"></div>
+</div>
+</div>
+</div>
+<div class="grid grid-cols-3 gap-4 py-4 border-t border-slate-50">
+<div>
+<p class="text-[10px] text-slate-400 uppercase font-bold mb-1">Total Due</p>
+<p class="text-base font-black text-primary">₹1,50,000</p>
+</div>
+<div>
+<p class="text-[10px] text-slate-400 uppercase font-bold mb-1">Minimum Due</p>
+<p class="text-base font-black text-primary">₹7,500</p>
+</div>
+<div>
+<p class="text-[10px] text-slate-400 uppercase font-bold mb-1">Due Date</p>
+<p class="text-base font-black text-primary">Apr 15, 2026</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Footer CTA -->
+<footer class="mt-12 bg-[#e8f2ff] rounded-xl p-8 flex justify-between items-center">
+<div class="flex items-center gap-6">
+<div class="w-16 h-16 bg-white rounded-full flex items-center justify-center shadow-sm">
+<span class="material-symbols-outlined text-primary text-3xl">psychology</span>
+</div>
+<div>
+<h4 class="text-xl font-black text-primary">Ready for a deeper analysis?</h4>
+<p class="text-slate-600 text-sm">Our AI can help you structure your debt to pay it off 3x faster.</p>
+</div>
+</div>
+<button class="bg-accent text-white px-6 py-3 rounded-lg font-black text-sm flex items-center gap-2 shadow-lg hover:shadow-xl transition-all">
+                    Get Your AI Debt Analysis
+                    <span class="material-symbols-outlined">arrow_forward</span>
+</button>
+</footer>
+</main>
+</div>
+</body></html>
