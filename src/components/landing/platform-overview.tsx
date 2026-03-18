@@ -139,6 +139,7 @@ export default function PlatformOverview() {
                     alt={t.author}
                     fill
                     className="object-cover"
+                    sizes="(max-width: 640px) 48px, 48px"
                   />
                 </div>
                 <div>
